@@ -12,8 +12,8 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="pin-generator half-width">
-                    <input class="form-control main-bar" type="text">
-                    <button class="generate-btn">Generate Pin</button>
+                    <input class="form-control main-bar" id="randomNumber" type="text">
+                    <button id="gnr-btn" class="generate-btn">Generate Pin</button>
                 </div>
             </div>
             <div class="col-md-6">
@@ -59,21 +59,27 @@
            
         </div>
     </div>
-    <script>
-        
+    <script>     
+                         
+         // Hide notification messes      
+         
+            var x = document.getElementsByClassName("notify");
+            var i;
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = 'none';
+            }
+
+
+            // Set random number
             
+            document.getElementById('gnr-btn').addEventListener('click', function() {
+                var randomNumber = Math.round(Math.random()*9000 + 1000);
+                document.getElementById('randomNumber').value = randomNumber;
+                
+            })
 
-                    
 
         
-       
-         //document.getElementById('notify-section').style.display = "none";
-
-         var x = document.getElementsByClassName("notify");
-         var i;
-         for (i = 0; i < x.length; i++) {
-             x[i].style.display = 'none';
-         }
       
     </script>
 
