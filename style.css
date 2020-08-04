@@ -1,10 +1,12 @@
 *{
     box-sizing: border-box;
 }
+
 body {
     background: #10101B;
     height: 100vh;
 }
+
 .container {
     margin-top: 30px;
 }
@@ -15,6 +17,7 @@ body {
     padding: 30px;
     text-align: center;
 }
+
 .generate-btn{
     margin-top: 140px;
     width: 180px;
@@ -27,10 +30,12 @@ body {
     font-size: 20px;
     text-align: center;
 }
+
 .generate-btn:focus{
     outline: none;
     box-shadow: none;
 }
+
 .main-bar{
     font-size: 20px;
     font-weight: bold;
@@ -46,12 +51,14 @@ input[type='text']{
     height: 50px;
     padding: 10px;
 }
+
 input[type='text']:focus {
     background-color: #3D4153;
     color: #fff;
     font-size: 20px;
     
 }
+
 .numbers {
     margin: 30px 0;
 }
@@ -78,9 +85,11 @@ vertical-align: middle;
 margin-right: -4px;
 cursor: pointer;
 }
+
 .blink-me {
 color: #E0B612;
 }
+
 .submit-btn {
     border: none;
     margin-top: 20px;
@@ -88,6 +97,7 @@ color: #E0B612;
     border-radius: 5px;
     font-size: 20px;
 }
+
 .notify {
     color: #fff;
     text-align: center;
@@ -99,7 +109,6 @@ color: #E0B612;
     display: none;
     
 }
-
 
 
 .notify-section{
