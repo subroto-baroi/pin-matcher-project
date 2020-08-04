@@ -13,13 +13,13 @@
             <div class="col-md-6">
                 <div class="pin-generator half-width">
                     <input class="form-control main-bar" id="randomNumber" type="text">
-                    <button id="gnr-btn" class="generate-btn">Generate Pin</button>
+                    <button id="generate-button" class="generate-btn btn btn-success">Generate Pin</button>
                 </div>
             </div>
             <div class="col-md-6">
-                <form action="" name="calculator">
+            <form action="" name="calculator">
                 <div class="input-section half-width">
-                    <input class="form-control main-bar" id="screen" name="display" type="text">
+                    <input id="displayNumber" class="form-control main-bar" id="screen" name="display" type="text">
                     <div class="numbers">
                         <div class="calc-body">
                             <div class="calc-button-row">
@@ -44,7 +44,7 @@
                                 
                             </div>
                             <div>
-                                <button type="submit" class="submit-btn btn btn-primary">Submit</button>
+                                <button type="submit" id="submit-button" class="submit-btn btn btn-primary">Submit</button>
                                 <p class="action-left">3 try left</p>
                             </div>
                     </div>
@@ -53,33 +53,54 @@
           </form>
         </div>
         <div class="notify-section">
-            <p class="notify">❌ Pin Didn't Match, Please try again</p>
-            <p class="notify">✅ Pin Matched... Secret door is opening for you</p>
+            <p class="notify" id="wrong-pin">❌ Pin Didn't Match, Please try again</p>
+            <p class="notify" id="matched-pin">✅ Pin Matched... Secret door is opening for you</p>
            
            
         </div>
     </div>
     <script>     
                          
-         // Hide notification messes      
+         // Hide notification message      
          
             var x = document.getElementsByClassName("notify");
-            var i;
-            for (i = 0; i < x.length; i++) {
+                var i;
+                for (i = 0; i < x.length; i++) {
                 x[i].style.display = 'none';
             }
 
 
-            // Set random number
-            
-            document.getElementById('gnr-btn').addEventListener('click', function() {
-                var randomNumber = Math.round(Math.random()*9000 + 1000);
+            // Set random generate number
+
+                document.getElementById('generate-button').addEventListener('click', function() {
+                var randomNumber = Math.round(Math.random()*9000+1000);
                 document.getElementById('randomNumber').value = randomNumber;
                 
             })
 
 
-        
+            // Matching submit pin
+
+                document.getElementById("submit-button").addEventListener("click", function(){
+                let randomNumber = document.getElementById("randomNumber");
+                let displayNumber = document.getElementById("displayNumber");
+
+                if(randomNumber.value == displayNumber.value){
+                    document.getElementById('matched-pin').style.display = "block";
+                     
+                    
+                    
+                    
+                }
+                else{
+                    document.getElementById('wrong-pin').style.display = "block";
+                    
+                   
+                   
+                }
+            })
+
+                    
       
     </script>
 
@@ -88,3 +109,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>
+        
